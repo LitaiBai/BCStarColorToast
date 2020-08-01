@@ -17,8 +17,8 @@ import kotlinx.android.synthetic.main.nx_motion_base_toast.view.*
 
 class NXColorToast {
     companion object {
-        const val SHORT_DURATION=Toast.LENGTH_SHORT
-        const val LONG_DURATION=Toast.LENGTH_LONG
+        const val SHORT_DURATION = Toast.LENGTH_SHORT
+        const val LONG_DURATION = Toast.LENGTH_LONG
         const val TOAST_SUCCESS = "SUCCESS"
         const val TOAST_ERROR = "FAILED"
         const val TOAST_WARNING = "WARNING"
@@ -33,9 +33,7 @@ class NXColorToast {
 
         private lateinit var layoutInflater: LayoutInflater
 
-
-        // all toast CTA
-        fun createToast(
+        private fun createToastMethod(
             context: Activity,
             message: String,
             style: String,
@@ -58,24 +56,28 @@ class NXColorToast {
                     )
 
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
 
                     // Background tint color for side view
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context,
+                        ContextCompat.getColorStateList(
+                            context,
                             R.color.success_color
                         )
 
                     // round background color
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.success_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -104,10 +106,10 @@ class NXColorToast {
                     } else {
                         toast.setGravity(position, 0, 0)
                     }
-                  
+
                     // Setting layout to toast
                     toast.view = layout
-                    toast.duration= duration
+                    toast.duration = duration
                     toast.show()
                 }
                 // CTA for Toast Error
@@ -118,21 +120,25 @@ class NXColorToast {
                             R.drawable.ic_error_
                         )
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context,
+                        ContextCompat.getColorStateList(
+                            context,
                             R.color.error_color
                         )
 
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.error_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -150,14 +156,14 @@ class NXColorToast {
                     layout.custom_toast_description.text = message
 
                     val toast = Toast(context.applicationContext)
-                 
+
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
                         toast.setGravity(position, 0, 0)
                     }
                     toast.view = layout//setting the view of custom toast layout
-                    toast.duration= duration
+                    toast.duration = duration
                     toast.show()
                 }
                 // CTA for Toast Warning
@@ -168,21 +174,25 @@ class NXColorToast {
                             R.drawable.ic_warning_yellow
                         )
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context,
+                        ContextCompat.getColorStateList(
+                            context,
                             R.color.warning_color
                         )
 
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.warning_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -201,14 +211,14 @@ class NXColorToast {
                     layout.custom_toast_description.text = message
 
                     val toast = Toast(context.applicationContext)
-                 
+
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
                         toast.setGravity(position, 0, 0)
                     }
                     toast.view = layout//setting the view of custom toast layout
-                    toast.duration= duration
+                    toast.duration = duration
                     toast.show()
                 }
                 // CTA for Toast Info
@@ -219,22 +229,26 @@ class NXColorToast {
                             R.drawable.ic_info_blue
                         )
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
 
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context,
+                        ContextCompat.getColorStateList(
+                            context,
                             R.color.info_color
                         )
 
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.info_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -254,7 +268,7 @@ class NXColorToast {
                     val toast = Toast(context.applicationContext)
 
 
-                    toast.duration= duration
+                    toast.duration = duration
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
@@ -273,22 +287,26 @@ class NXColorToast {
                     )
 
 
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context,
+                        ContextCompat.getColorStateList(
+                            context,
                             R.color.delete_color
                         )
 
 
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.delete_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -306,7 +324,7 @@ class NXColorToast {
                     layout.custom_toast_description.text = message
 
                     val toast = Toast(context.applicationContext)
-                    toast.duration= duration
+                    toast.duration = duration
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
@@ -327,22 +345,26 @@ class NXColorToast {
                     )
 
 
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context,
+                        ContextCompat.getColorStateList(
+                            context,
                             R.color.warning_color
                         )
 
 
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.warning_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -360,7 +382,7 @@ class NXColorToast {
                     layout.custom_toast_description.text = message
 
                     val toast = Toast(context.applicationContext)
-                    toast.duration= duration
+                    toast.duration = duration
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
@@ -376,6 +398,25 @@ class NXColorToast {
             }
 
         }
+
+        // all toast CTA
+        fun createToast(
+            context: Activity,
+            message: String,
+            style: String,
+            position: Int,
+            duration: Int
+        ) {
+            if ("main" == Thread.currentThread().name.toLowerCase()) {
+                createToastMethod(context, message, style, position, duration)
+            } else {
+                context.runOnUiThread {
+                    createToastMethod(context, message, style, position, duration)
+                }
+            }
+
+        }
+
         fun NXCreateToast(
             context: Activity,
             message: String,
@@ -383,6 +424,21 @@ class NXColorToast {
             position: Int,
             duration: Int
         ) {
+            if ("main" == Thread.currentThread().name.toLowerCase()) {
+                nxCreateToast(context, message, style, position, duration)
+            } else {
+                context.runOnUiThread {
+                    nxCreateToast(context, message, style, position, duration)
+                }
+            }
+
+
+        }
+        private fun nxCreateToast(  context: Activity,
+                                    message: String,
+                                    style: String,
+                                    position: Int,
+                                    duration: Int){
             layoutInflater = LayoutInflater.from(context)
             val layout = layoutInflater.inflate(
                 R.layout.nx_motion_base_toast,
@@ -394,11 +450,13 @@ class NXColorToast {
 
                     // round background color
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background2
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.nx_success_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -425,18 +483,20 @@ class NXColorToast {
 
                     // Setting layout to toast
                     toast.view = layout
-                    toast.duration= duration
+                    toast.duration = duration
                     toast.show()
                 }
                 // CTA for Toast Error
                 TOAST_ERROR -> {
 
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background2
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.nx_error_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -447,25 +507,27 @@ class NXColorToast {
                     layout.custom_toast_descriptiona.text = message
 
                     val toast = Toast(context.applicationContext)
-                  
+
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
                         toast.setGravity(position, 0, 0)
                     }
                     toast.view = layout//setting the view of custom toast layout
-                    toast.duration= duration
+                    toast.duration = duration
                     toast.show()
                 }
                 // CTA for Toast Warning
                 TOAST_WARNING -> {
 
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background2
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.nx_warning_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -477,25 +539,27 @@ class NXColorToast {
                     layout.custom_toast_descriptiona.text = message
 
                     val toast = Toast(context.applicationContext)
-                   
+
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
                         toast.setGravity(position, 0, 0)
                     }
                     toast.view = layout//setting the view of custom toast layout
-                    toast.duration= duration
+                    toast.duration = duration
                     toast.show()
                 }
                 // CTA for Toast Info
                 TOAST_INFO -> {
 
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background2
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.nx_info_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -506,7 +570,7 @@ class NXColorToast {
                     layout.custom_toast_descriptiona.text = message
 
                     val toast = Toast(context.applicationContext)
-                     toast.duration=duration
+                    toast.duration = duration
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
@@ -519,11 +583,13 @@ class NXColorToast {
                 TOAST_DELETE -> {
 
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background2
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.nx_delete_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -534,7 +600,7 @@ class NXColorToast {
                     layout.custom_toast_descriptiona.text = message
 
                     val toast = Toast(context.applicationContext)
-                    toast.duration=duration
+                    toast.duration = duration
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
@@ -549,11 +615,13 @@ class NXColorToast {
                 TOAST_NO_INTERNET -> {
 
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background2
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.nx_warning_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -564,7 +632,7 @@ class NXColorToast {
                     layout.custom_toast_descriptiona.text = message
 
                     val toast = Toast(context.applicationContext)
-                    toast.duration=duration
+                    toast.duration = duration
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
@@ -578,63 +646,83 @@ class NXColorToast {
 
 
             }
-
         }
-        fun NXCustomToast(
-            context: Activity,
-            message: String,
-            position: Int= GRAVITY_BOTTOM,
-            duration: Int= SHORT_DURATION,
-            @ColorRes bgColor:Int= R.color.delete_bg_color,
-            @ColorRes textColor:Int= R.color.dark_bg_color
-        ) {
 
-
+        fun nxCustomeToast( context: Activity,
+                            message: String,
+                            position: Int = GRAVITY_BOTTOM,
+                            duration: Int = SHORT_DURATION,
+                            @ColorRes bgColor: Int = R.color.delete_bg_color,
+                            @ColorRes textColor: Int = R.color.dark_bg_color){
             layoutInflater = LayoutInflater.from(context)
             val layout = layoutInflater.inflate(
                 R.layout.nx_motion_base_toast,
                 (context).findViewById(R.id.motion_toast_views)
             )
 
-                    val drawable =
-                        ContextCompat.getDrawable(context,
-                            R.drawable.toast_round_background2
-                        )
-                    drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,bgColor),
-                        PorterDuff.Mode.MULTIPLY
-                    )
+            val drawable =
+                ContextCompat.getDrawable(
+                    context,
+                    R.drawable.toast_round_background2
+                )
+            drawable?.colorFilter = PorterDuffColorFilter(
+                ContextCompat.getColor(context, bgColor),
+                PorterDuff.Mode.MULTIPLY
+            )
 
-                    layout.background = drawable
-
-
-                    layout.custom_toast_descriptiona.setTextColor(  ContextCompat.getColor(context,textColor))
-                    layout.custom_toast_descriptiona.text = message
+            layout.background = drawable
 
 
-                    // init toast
-                    val toast = Toast(context.applicationContext)
+            layout.custom_toast_descriptiona.setTextColor(
+                ContextCompat.getColor(
+                    context,
+                    textColor
+                )
+            )
+            layout.custom_toast_descriptiona.text = message
 
-                    //   Setting up the duration
 
-                    // Setting Toast Gravity
-                    if (position == GRAVITY_BOTTOM) {
-                        toast.setGravity(position, 0, 100)
-                    } else if(position == GRAVITY_CENTER){
+            // init toast
+            val toast = Toast(context.applicationContext)
 
-                            toast.setGravity(position, 0, 10)
+            //   Setting up the duration
 
-                    }else{
-                        toast.setGravity(position, 0, 200)
-                    }
+            // Setting Toast Gravity
+            if (position == GRAVITY_BOTTOM) {
+                toast.setGravity(position, 0, 100)
+            } else if (position == GRAVITY_CENTER) {
 
-                    // Setting layout to toast
-                    toast.view = layout
-                    toast.duration= duration
-                    toast.show()
+                toast.setGravity(position, 0, 10)
 
+            } else {
+                toast.setGravity(position, 0, 200)
+            }
+
+            // Setting layout to toast
+            toast.view = layout
+            toast.duration = duration
+            toast.show()
 
         }
+
+        fun NXCustomToast(
+            context: Activity,
+            message: String,
+            position: Int = GRAVITY_BOTTOM,
+            duration: Int = SHORT_DURATION,
+            @ColorRes bgColor: Int = R.color.delete_bg_color,
+            @ColorRes textColor: Int = R.color.dark_bg_color
+        ) {
+            if ("main" == Thread.currentThread().name.toLowerCase()) {
+                nxCustomeToast(context,message,position,duration,bgColor,textColor)
+            } else {
+                context.runOnUiThread {
+                    nxCustomeToast(context,message,position,duration,bgColor,textColor)
+                }
+            }
+
+        }
+
         // all color toast CTA
         fun createColorToast(
             context: Activity,
@@ -644,6 +732,19 @@ class NXColorToast {
             duration: Int
 
         ) {
+            if ("main" == Thread.currentThread().name.toLowerCase()) {
+                createColorToastMethod(context,message,style,position,duration)
+            } else {
+                context.runOnUiThread {
+                    createColorToastMethod(context,message,style,position,duration)
+                }
+            }
+        }
+        private fun createColorToastMethod(   context: Activity,
+                                        message: String,
+                                        style: String,
+                                        position: Int,
+                                        duration: Int){
             layoutInflater = LayoutInflater.from(context)
             val layout = layoutInflater.inflate(
                 R.layout.full_color_toast,
@@ -660,18 +761,21 @@ class NXColorToast {
                     )
 
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.color_toast_image.startAnimation(pulseAnimation)
 
                     // round background color
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.success_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -687,12 +791,11 @@ class NXColorToast {
                     layout.color_toast_description.text = message
 
 
-
                     // init toast
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                    toast.duration=duration
+                    toast.duration = duration
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -715,18 +818,21 @@ class NXColorToast {
                     )
 
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.color_toast_image.startAnimation(pulseAnimation)
 
                     // round background color
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.error_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -742,12 +848,11 @@ class NXColorToast {
                     layout.color_toast_description.text = message
 
 
-
                     // init toast
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                   toast.duration=duration
+                    toast.duration = duration
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
@@ -769,18 +874,21 @@ class NXColorToast {
                     )
 
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.color_toast_image.startAnimation(pulseAnimation)
 
                     // round background color
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.warning_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -800,7 +908,7 @@ class NXColorToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                   toast.duration=duration
+                    toast.duration = duration
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -823,18 +931,21 @@ class NXColorToast {
                     )
 
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.color_toast_image.startAnimation(pulseAnimation)
 
                     // round background color
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.info_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -850,12 +961,11 @@ class NXColorToast {
                     layout.color_toast_description.text = message
 
 
-
                     // init toast
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                   toast.duration=duration
+                    toast.duration = duration
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -879,18 +989,21 @@ class NXColorToast {
 
 
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.color_toast_image.startAnimation(pulseAnimation)
 
                     // round background color
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.delete_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -906,12 +1019,11 @@ class NXColorToast {
                     layout.color_toast_description.text = message
 
 
-
                     // init toast
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                   toast.duration=duration
+                    toast.duration = duration
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -935,18 +1047,21 @@ class NXColorToast {
                     )
 
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.color_toast_image.startAnimation(pulseAnimation)
 
                     // round background color
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.warning_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -966,7 +1081,7 @@ class NXColorToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                   toast.duration=duration
+                    toast.duration = duration
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -981,6 +1096,7 @@ class NXColorToast {
                 }
             }
         }
+
 
         // all dark toast CTA
         fun darkToast(
@@ -1007,18 +1123,21 @@ class NXColorToast {
                     )
 
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.color_toast_image.startAnimation(pulseAnimation)
 
                     // round background color
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.dark_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -1043,7 +1162,7 @@ class NXColorToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                   toast.duration=duration
+                    toast.duration = duration
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -1066,18 +1185,21 @@ class NXColorToast {
                     )
 
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.color_toast_image.startAnimation(pulseAnimation)
 
                     // round background color
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.dark_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -1098,12 +1220,11 @@ class NXColorToast {
                     layout.color_toast_description.text = message
 
 
-
                     // init toast
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                   toast.duration=duration
+                    toast.duration = duration
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
@@ -1125,18 +1246,21 @@ class NXColorToast {
                     )
 
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.color_toast_image.startAnimation(pulseAnimation)
 
                     // round background color
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.dark_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -1161,7 +1285,7 @@ class NXColorToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                   toast.duration=duration
+                    toast.duration = duration
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
@@ -1183,18 +1307,21 @@ class NXColorToast {
                     )
 
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.color_toast_image.startAnimation(pulseAnimation)
 
                     // round background color
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.dark_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -1219,7 +1346,7 @@ class NXColorToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                   toast.duration=duration
+                    toast.duration = duration
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -1243,18 +1370,21 @@ class NXColorToast {
 
 
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.color_toast_image.startAnimation(pulseAnimation)
 
                     // round background color
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.dark_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -1279,7 +1409,7 @@ class NXColorToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                   toast.duration=duration
+                    toast.duration = duration
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -1303,18 +1433,21 @@ class NXColorToast {
                     )
 
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.color_toast_image.startAnimation(pulseAnimation)
 
                     // round background color
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.dark_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -1335,12 +1468,11 @@ class NXColorToast {
                     layout.color_toast_description.text = message
 
 
-
                     // init toast
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                   toast.duration=duration
+                    toast.duration = duration
 
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
@@ -1386,24 +1518,28 @@ class NXColorToast {
                     )
 
                     // Pulse Animation for Icon
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
 
                     // Background tint color for side view
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context,
+                        ContextCompat.getColorStateList(
+                            context,
                             R.color.success_color
                         )
 
                     // round background color
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.dark_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -1428,7 +1564,7 @@ class NXColorToast {
                     val toast = Toast(context.applicationContext)
 
                     //   Setting up the duration
-                   toast.duration=duration
+                    toast.duration = duration
                     // Setting Toast Gravity
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
@@ -1448,21 +1584,25 @@ class NXColorToast {
                             R.drawable.ic_error_
                         )
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context,
+                        ContextCompat.getColorStateList(
+                            context,
                             R.color.error_color
                         )
 
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.dark_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -1480,7 +1620,7 @@ class NXColorToast {
                     layout.custom_toast_description.text = message
 
                     val toast = Toast(context.applicationContext)
-                   toast.duration=duration
+                    toast.duration = duration
 
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
@@ -1498,21 +1638,25 @@ class NXColorToast {
                             R.drawable.ic_warning_yellow
                         )
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context,
+                        ContextCompat.getColorStateList(
+                            context,
                             R.color.warning_color
                         )
 
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.dark_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -1531,7 +1675,7 @@ class NXColorToast {
                     layout.custom_toast_description.text = message
 
                     val toast = Toast(context.applicationContext)
-                   toast.duration=duration
+                    toast.duration = duration
 
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
@@ -1549,22 +1693,26 @@ class NXColorToast {
                             R.drawable.ic_info_blue
                         )
                     )
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
 
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context,
+                        ContextCompat.getColorStateList(
+                            context,
                             R.color.info_color
                         )
 
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.dark_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -1582,7 +1730,7 @@ class NXColorToast {
                     layout.custom_toast_description.text = message
 
                     val toast = Toast(context.applicationContext)
-                   toast.duration=duration
+                    toast.duration = duration
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
@@ -1601,22 +1749,26 @@ class NXColorToast {
                     )
 
 
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context,
+                        ContextCompat.getColorStateList(
+                            context,
                             R.color.delete_color
                         )
 
 
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.dark_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -1634,7 +1786,7 @@ class NXColorToast {
                     layout.custom_toast_description.text = message
 
                     val toast = Toast(context.applicationContext)
-                   toast.duration=duration
+                    toast.duration = duration
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
@@ -1655,22 +1807,26 @@ class NXColorToast {
                     )
 
 
-                    val pulseAnimation = AnimationUtils.loadAnimation(context,
+                    val pulseAnimation = AnimationUtils.loadAnimation(
+                        context,
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
                     layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(context,
+                        ContextCompat.getColorStateList(
+                            context,
                             R.color.warning_color
                         )
 
 
                     val drawable =
-                        ContextCompat.getDrawable(context,
+                        ContextCompat.getDrawable(
+                            context,
                             R.drawable.toast_round_background
                         )
                     drawable?.colorFilter = PorterDuffColorFilter(
-                        ContextCompat.getColor(context,
+                        ContextCompat.getColor(
+                            context,
                             R.color.dark_bg_color
                         ),
                         PorterDuff.Mode.MULTIPLY
@@ -1688,7 +1844,7 @@ class NXColorToast {
                     layout.custom_toast_description.text = message
 
                     val toast = Toast(context.applicationContext)
-                   toast.duration=duration
+                    toast.duration = duration
                     if (position == GRAVITY_BOTTOM) {
                         toast.setGravity(position, 0, 100)
                     } else {
