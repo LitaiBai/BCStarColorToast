@@ -11,11 +11,11 @@
     <color name="delete_color">#F44336</color>
 
     <!--    Background Transparent Colors-->
-    <color name="warning_bg_color">#33FBC02D</color>
-    <color name="error_bg_color">#33D32F2F</color>
-    <color name="success_bg_color">#3317B978</color>
-    <color name="info_bg_color">#330340DA</color>
-    <color name="delete_bg_color">#D8B8B7B7</color>
+    <color name="warning_bg_color">#45F8F8F8</color>
+    <color name="error_bg_color">#45D32F2F</color>
+    <color name="success_bg_color">#4517B978</color>
+    <color name="info_bg_color">#450340DA</color>
+    <color name="delete_bg_color">#45B8B7B7</color>
 
     <!--    Dark Toast bg-->
     <color name="dark_bg_color">#3F3F40</color>
@@ -26,5 +26,6 @@
     <color name="nx_success_color">#B517B978</color>
     <color name="nx_info_color">#B52CCDE1</color>
     <color name="nx_delete_color">#B5F44336</color>
+    <color name="default_color">#45F8F8F8</color>
 
 </resources>

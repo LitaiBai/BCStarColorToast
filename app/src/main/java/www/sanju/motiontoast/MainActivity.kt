@@ -44,14 +44,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                 )
             }
             R.id.errorBtn -> {
-                NXColorToast.NXCreateToast(this,"发送验证码，15613365692号码,\n请稍查收!",
+                NXColorToast.createColorToast(this,"发送验证码，15613365692号码,\n请稍查收!",
                     NXColorToast.TOAST_ERROR,
-                    NXColorToast.GRAVITY_TOP,
+                    NXColorToast.GRAVITY_CENTER,
                     NXColorToast.LONG_DURATION
                    )         }
             R.id.warningBtn ->{
 
-                NXColorToast.NXCreateToast(this,"Please Fill All The Details!",
+                NXColorToast.createToast(this,"登录成功!",
                     NXColorToast.TOAST_WARNING,
                     NXColorToast.GRAVITY_BOTTOM,
                     NXColorToast.LONG_DURATION

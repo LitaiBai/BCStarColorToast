@@ -10,6 +10,7 @@ import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
 import kotlinx.android.synthetic.main.full_color_toast.view.*
 import kotlinx.android.synthetic.main.motion_toast.view.*
 import kotlinx.android.synthetic.main.nx_motion_base_toast.view.*
@@ -63,12 +64,11 @@ class NXColorToast {
                     layout.custom_toast_image.startAnimation(pulseAnimation)
 
                     // Background tint color for side view
-                    layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(
-                            context,
-                            R.color.success_color
-                        )
 
+                    ViewCompat.setBackgroundTintList(layout.colorView, ContextCompat.getColorStateList(
+                        context,
+                        R.color.success_color
+                    ))
                     // round background color
                     val drawable =
                         ContextCompat.getDrawable(
@@ -125,12 +125,11 @@ class NXColorToast {
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
-                    layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(
-                            context,
-                            R.color.error_color
-                        )
 
+                    ViewCompat.setBackgroundTintList(layout.colorView, ContextCompat.getColorStateList(
+                        context,
+                        R.color.error_color
+                    ))
                     val drawable =
                         ContextCompat.getDrawable(
                             context,
@@ -179,12 +178,11 @@ class NXColorToast {
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
-                    layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(
-                            context,
-                            R.color.warning_color
-                        )
 
+                    ViewCompat.setBackgroundTintList(layout.colorView, ContextCompat.getColorStateList(
+                        context,
+                        R.color.warning_color
+                    ))
                     val drawable =
                         ContextCompat.getDrawable(
                             context,
@@ -235,12 +233,11 @@ class NXColorToast {
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
 
-                    layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(
-                            context,
-                            R.color.info_color
-                        )
 
+                    ViewCompat.setBackgroundTintList(layout.colorView, ContextCompat.getColorStateList(
+                        context,
+                        R.color.info_color
+                    ))
                     val drawable =
                         ContextCompat.getDrawable(
                             context,
@@ -292,12 +289,11 @@ class NXColorToast {
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
-                    layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(
-                            context,
-                            R.color.delete_color
-                        )
 
+                    ViewCompat.setBackgroundTintList(layout.colorView, ContextCompat.getColorStateList(
+                        context,
+                        R.color.delete_color
+                    ))
 
                     val drawable =
                         ContextCompat.getDrawable(
@@ -350,13 +346,11 @@ class NXColorToast {
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
-                    layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(
-                            context,
-                            R.color.warning_color
-                        )
 
-
+                    ViewCompat.setBackgroundTintList(layout.colorView, ContextCompat.getColorStateList(
+                        context,
+                        R.color.warning_color
+                    ))
                     val drawable =
                         ContextCompat.getDrawable(
                             context,
@@ -710,8 +704,8 @@ class NXColorToast {
             message: String,
             position: Int = GRAVITY_BOTTOM,
             duration: Int = SHORT_DURATION,
-            @ColorRes bgColor: Int = R.color.delete_bg_color,
-            @ColorRes textColor: Int = R.color.dark_bg_color
+            @ColorRes bgColor: Int =  R.color.default_color,
+            @ColorRes textColor: Int = android.R.color.black
         ) {
             if ("main" == Thread.currentThread().name.toLowerCase()) {
                 nxCustomeToast(context,message,position,duration,bgColor,textColor)
@@ -1525,12 +1519,12 @@ class NXColorToast {
                     layout.custom_toast_image.startAnimation(pulseAnimation)
 
                     // Background tint color for side view
-                    layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(
-                            context,
-                            R.color.success_color
-                        )
 
+
+                    ViewCompat.setBackgroundTintList(layout.colorView, ContextCompat.getColorStateList(
+                        context,
+                        R.color.success_color
+                    ))
                     // round background color
                     val drawable =
                         ContextCompat.getDrawable(
@@ -1589,12 +1583,11 @@ class NXColorToast {
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
-                    layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(
-                            context,
-                            R.color.error_color
-                        )
 
+                    ViewCompat.setBackgroundTintList(layout.colorView, ContextCompat.getColorStateList(
+                        context,
+                        R.color.error_color
+                    ))
                     val drawable =
                         ContextCompat.getDrawable(
                             context,
@@ -1643,12 +1636,11 @@ class NXColorToast {
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
-                    layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(
-                            context,
-                            R.color.warning_color
-                        )
 
+                    ViewCompat.setBackgroundTintList(layout.colorView, ContextCompat.getColorStateList(
+                        context,
+                        R.color.warning_color
+                    ))
                     val drawable =
                         ContextCompat.getDrawable(
                             context,
@@ -1699,12 +1691,11 @@ class NXColorToast {
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
 
-                    layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(
-                            context,
-                            R.color.info_color
-                        )
 
+                    ViewCompat.setBackgroundTintList(layout.colorView, ContextCompat.getColorStateList(
+                        context,
+                        R.color.info_color
+                    ))
                     val drawable =
                         ContextCompat.getDrawable(
                             context,
@@ -1754,13 +1745,12 @@ class NXColorToast {
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
-                    layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(
-                            context,
-                            R.color.delete_color
-                        )
 
 
+                    ViewCompat.setBackgroundTintList(layout.colorView, ContextCompat.getColorStateList(
+                        context,
+                        R.color.delete_color
+                    ))
                     val drawable =
                         ContextCompat.getDrawable(
                             context,
@@ -1812,13 +1802,12 @@ class NXColorToast {
                         R.anim.pulse
                     )
                     layout.custom_toast_image.startAnimation(pulseAnimation)
-                    layout.colorView.backgroundTintList =
-                        ContextCompat.getColorStateList(
-                            context,
-                            R.color.warning_color
-                        )
 
 
+                    ViewCompat.setBackgroundTintList(layout.colorView, ContextCompat.getColorStateList(
+                        context,
+                        R.color.warning_color
+                    ))
                     val drawable =
                         ContextCompat.getDrawable(
                             context,
