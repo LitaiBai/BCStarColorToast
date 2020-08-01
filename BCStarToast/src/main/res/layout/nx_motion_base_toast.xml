@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/motion_toast_views"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minHeight="40dp"
+    android:minWidth="200dp"
+    android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/custom_toast_descriptiona"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello this is demo warning!"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+
+
+</RelativeLayout>

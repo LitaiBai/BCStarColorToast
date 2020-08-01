@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--    Background Colors-->
+
+    <color name="warning_color">#FBC02D</color>
+    <color name="error_color">#FF5722</color>
+    <color name="success_color">#17B978</color>
+    <color name="info_color">#2CCDE1</color>
+    <color name="delete_color">#F44336</color>
+
+    <!--    Background Transparent Colors-->
+    <color name="warning_bg_color">#33FBC02D</color>
+    <color name="error_bg_color">#33D32F2F</color>
+    <color name="success_bg_color">#3317B978</color>
+    <color name="info_bg_color">#330340DA</color>
+    <color name="delete_bg_color">#D8B8B7B7</color>
+
+    <!--    Dark Toast bg-->
+    <color name="dark_bg_color">#3F3F40</color>
+    <color name="success_title_color">#17B978</color>
+
+    <color name="nx_warning_color">#B5F8C74F</color>
+    <color name="nx_error_color">#B5FF5722</color>
+    <color name="nx_success_color">#B517B978</color>
+    <color name="nx_info_color">#B52CCDE1</color>
+    <color name="nx_delete_color">#B5F44336</color>
+
+</resources>
