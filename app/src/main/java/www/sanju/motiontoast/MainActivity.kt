@@ -1,8 +1,8 @@
 package www.sanju.motiontoast
 
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import com.bcstar.toast.NXColorToast
 import kotlinx.android.synthetic.main.activity_main.*
 

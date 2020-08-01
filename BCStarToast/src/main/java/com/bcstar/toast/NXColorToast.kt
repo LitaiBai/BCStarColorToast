@@ -4,13 +4,13 @@ import android.app.Activity
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
+import android.support.annotation.ColorRes
+import android.support.v4.content.ContextCompat
+import android.support.v4.view.ViewCompat
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.animation.AnimationUtils
 import android.widget.Toast
-import androidx.annotation.ColorRes
-import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
 import kotlinx.android.synthetic.main.full_color_toast.view.*
 import kotlinx.android.synthetic.main.motion_toast.view.*
 import kotlinx.android.synthetic.main.nx_motion_base_toast.view.*
@@ -642,12 +642,12 @@ class NXColorToast {
             }
         }
 
-        fun nxCustomeToast( context: Activity,
-                            message: String,
-                            position: Int = GRAVITY_BOTTOM,
-                            duration: Int = SHORT_DURATION,
-                            @ColorRes bgColor: Int = R.color.delete_bg_color,
-                            @ColorRes textColor: Int = R.color.dark_bg_color){
+        fun nxCustomeToast(context: Activity,
+                           message: String,
+                           position: Int = GRAVITY_BOTTOM,
+                           duration: Int = SHORT_DURATION,
+                           @ColorRes bgColor: Int = R.color.delete_bg_color,
+                           @ColorRes textColor: Int = R.color.dark_bg_color){
             layoutInflater = LayoutInflater.from(context)
             val layout = layoutInflater.inflate(
                 R.layout.nx_motion_base_toast,
